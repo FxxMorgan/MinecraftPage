@@ -636,7 +636,7 @@
         <ul class="feature-list">
           <li><strong>Java 17 JDK</strong><br><a href="https://adoptium.net/es/" target="_blank">Descargar desde Adoptium</a></li>
           <li><strong>Launcher Compatible</strong><br>TLauncher, HMCL, CurseForge, MultiMC</li>
-          <li><strong>ZeroTier VPN</strong><br>Para conectarse al servidor privado</li>
+          <li><strong>Conexión a Internet</strong><br>Para conectarse al servidor público</li>
           <li><strong>4GB RAM mínimo</strong><br>8GB recomendado para mejor rendimiento</li>
         </ul>
       </div>
@@ -680,31 +680,32 @@
       <div class="card">
         <div class="card-header">
           <div class="card-icon">🌐</div>
-          <h2>ZeroTier</h2>
+          <h2>Conexión al Servidor</h2>
         </div>
         <div class="step">
           <div class="step-number">1</div>
           <div class="step-content">
-            <h3>Descargar ZeroTier</h3>
-            <p><a href="https://www.zerotier.com/download/" target="_blank">Obtener desde zerotier.com</a></p>
+            <h3>Agregar Servidor</h3>
+            <p>En tu launcher de Minecraft, agrega un nuevo servidor con esta información:</p>
           </div>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3>Unirse a la Red</h3>
-            <p>Network ID: <strong>abfd31bd4700344e</strong>
-              <button class="copy-btn" onclick="copyToClipboard('abfd31bd4700344e')">📋</button>
+            <h3>Dirección del Servidor</h3>
+            <p>IP Principal: <strong>mc.morganscan.com</strong>
+              <button class="copy-btn" onclick="copyToClipboard('mc.morganscan.com')">📋</button>
+            </p>
+            <p>IP Alternativa: <strong>159.112.140.38:25565</strong>
+              <button class="copy-btn" onclick="copyToClipboard('159.112.140.38:25565')">📋</button>
             </p>
           </div>
         </div>
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
-            <h3>Conectar</h3>
-            <p>IP: <strong>10.241.14.161:25565</strong>
-              <button class="copy-btn" onclick="copyToClipboard('10.241.14.161:25565')">📋</button>
-            </p>
+            <h3>¡Conectar y Jugar!</h3>
+            <p>Selecciona el servidor y haz clic en "Conectar". ¡Es así de fácil!</p>
           </div>
         </div>
       </div>
@@ -723,11 +724,12 @@
           <div class="terminal-content">
             Versión: Minecraft 1.20.1<br>
             Forge: 47.4.0<br>
-            IP: 10.241.14.161:25565<br>
-            Network ID: abfd31bd4700344e<br>
+            Dominio: mc.morganscan.com<br>
+            IP: 159.112.140.38:25565<br>
             Jugadores: 20 máximo<br>
             Modo: Supervivencia<br>
-            Dificultad: Normal
+            Dificultad: Normal<br>
+            Hosting: Oracle Cloud VM + FRP
           </div>
         </div>
         
@@ -764,7 +766,7 @@
             </div>
           </div>
           <p style="font-size: 0.9em; color: #B0B0B0; margin-top: 10px;">
-            Se verifica la conectividad con morganscan.com
+            Se verifica la conectividad con mc.morganscan.com
           </p>
         </div>
       </div>
@@ -772,8 +774,8 @@
       <div class="step">
         <div class="step-number">2</div>
         <div class="step-content">
-          <h3>Verificar Conectividad ZeroTier</h3>
-          <p>Si el servidor está online, verifica tu conexión ZeroTier:</p>
+          <h3>Verificar Conectividad del Servidor</h3>
+          <p>Si el servidor está online, puedes hacer ping para verificar latencia:</p>
           <div class="terminal">
             <div class="terminal-header">
               <div class="terminal-dot"></div>
@@ -781,8 +783,8 @@
               <div class="terminal-dot"></div>
             </div>
             <div class="terminal-content">
-              ping 10.241.14.161
-              <button class="copy-btn" onclick="copyToClipboard('ping 10.241.14.161')">📋</button>
+              ping mc.morganscan.com
+              <button class="copy-btn" onclick="copyToClipboard('ping mc.morganscan.com')">📋</button>
             </div>
           </div>
         </div>
@@ -801,11 +803,11 @@
             </div>
             <div class="terminal-content">
               # Windows (PowerShell)<br>
-              Test-NetConnection -ComputerName 10.241.14.161 -Port 25565
-              <button class="copy-btn" onclick="copyToClipboard('Test-NetConnection -ComputerName 10.241.14.161 -Port 25565')">📋</button><br><br>
+              Test-NetConnection -ComputerName mc.morganscan.com -Port 25565
+              <button class="copy-btn" onclick="copyToClipboard('Test-NetConnection -ComputerName mc.morganscan.com -Port 25565')">📋</button><br><br>
               # Linux/Mac<br>
-              telnet 10.241.14.161 25565
-              <button class="copy-btn" onclick="copyToClipboard('telnet 10.241.14.161 25565')">📋</button>
+              telnet mc.morganscan.com 25565
+              <button class="copy-btn" onclick="copyToClipboard('telnet mc.morganscan.com 25565')">📋</button>
             </div>
           </div>
         </div>
@@ -821,12 +823,12 @@
       <div class="warning-box">
         <h3>🔧 Diagnóstico de Problemas de Conexión</h3>
         <ul>
-          <li>Verifica que ZeroTier esté conectado y autorizado en ambos dispositivos</li>
-          <li>Confirma que ambos dispositivos estén en la red <strong>abfd31bd4700344e</strong></li>
-          <li>Asegúrate de que el servidor Minecraft esté ejecutándose en el host</li>
-          <li>Verifica que el firewall de Windows permita conexiones en el puerto 25565</li>
-          <li>Intenta reiniciar ZeroTier en ambos dispositivos</li>
-          <li>Comprueba que la IP ZeroTier sea correcta: <strong>10.241.14.161</strong></li>
+          <li>Verifica tu conexión a internet</li>
+          <li>Confirma que uses la dirección correcta: <strong>mc.morganscan.com</strong></li>
+          <li>Asegúrate de que el servidor Minecraft esté ejecutándose</li>
+          <li>Verifica que tu firewall permita conexiones salientes al puerto 25565</li>
+          <li>Intenta usar la IP directa: <strong>159.112.140.38:25565</strong></li>
+          <li>Comprueba que tengas la versión correcta: <strong>Minecraft 1.20.1 con Forge 47.4.0</strong></li>
         </ul>
       </div>
     </div>
@@ -848,9 +850,9 @@
         <ul>
           <li>Verifica que Java 17 esté instalado</li>
           <li>Confirma que los mods estén en la carpeta correcta</li>
-          <li>Asegúrate de estar conectado a ZeroTier (<strong>abfd31bd4700344e</strong>)</li>
-          <li>Verifica conectividad: <code>ping 10.241.14.161</code></li>
-          <li>Usa la IP completa: <strong>10.241.14.161:25565</strong></li>
+          <li>Asegúrate de tener una conexión estable a internet</li>
+          <li>Verifica conectividad: <code>ping mc.morganscan.com</code></li>
+          <li>Usa la IP directa si hay problemas DNS: <strong>159.112.140.38:25565</strong></li>
           <li>Reinicia el launcher después de instalar mods</li>
         </ul>
       </div>
@@ -865,8 +867,8 @@
       const statusText = document.getElementById('statusText');
       
       try {
-        // Intentar hacer ping a bomberos.morganscan.com
-        const response = await fetch('https://bomberos.morganscan.com', {
+        // Intentar hacer ping a mc.morganscan.com
+        const response = await fetch('https://mc.morganscan.com', {
           method: 'HEAD',
           mode: 'no-cors',
           cache: 'no-cache'
@@ -876,22 +878,35 @@
         updateStatus('online');
         
       } catch (error) {
-        // Si hay error, intentamos con una solicitud HTTP normal
+        // Si hay error, intentamos con una solicitud a la API de estado de Minecraft
         try {
-          const img = new Image();
-          img.onload = () => updateStatus('online');
-          img.onerror = () => updateStatus('offline');
-          img.src = 'https://bomberos.morganscan.com/favicon.ico?' + new Date().getTime();
+          const response = await fetch(`https://api.mcsrvstat.us/2/mc.morganscan.com`);
+          const data = await response.json();
           
-          // Timeout después de 5 segundos
-          setTimeout(() => {
-            if (statusText.textContent === 'Verificando...') {
-              updateStatus('offline');
-            }
-          }, 5000);
+          if (data.online) {
+            updateStatus('online');
+          } else {
+            updateStatus('offline');
+          }
           
         } catch (error2) {
-          updateStatus('offline');
+          // Como último recurso, verificamos con imagen
+          try {
+            const img = new Image();
+            img.onload = () => updateStatus('online');
+            img.onerror = () => updateStatus('offline');
+            img.src = 'https://morganscan.com/favicon.ico?' + new Date().getTime();
+            
+            // Timeout después de 5 segundos
+            setTimeout(() => {
+              if (statusText.textContent === 'Verificando...') {
+                updateStatus('offline');
+              }
+            }, 5000);
+            
+          } catch (error3) {
+            updateStatus('offline');
+          }
         }
       }
     }
